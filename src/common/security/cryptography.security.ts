@@ -7,7 +7,4 @@ export class CryptographySecurity {
     return result;
   }
 
-  async generatePassword() {
-    return crypto.randomBytes(5).toString('hex');
-  }
 }
