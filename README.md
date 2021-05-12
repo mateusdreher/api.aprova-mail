@@ -92,7 +92,7 @@ Above a list of endpoints and if is needed the token:
 
 * [Create new email](http://localhost:3000/docs/#/mail/MailController_create): **Need the token**
 
-*OBS: You need at least two different users in the same city to send an email (sender and receiver)*
+*OBS: You need at least two different users in the same city to send an email (sender and receiver). Thr sender is user logged (you) and receiver is an userId passed in payload*
 * [List mails received by you](http://localhost:3000/docs/#/mail/MailController_listMyReceived): **Need the token**
 ``` javascript
 //Sorting de list:
