@@ -18,6 +18,9 @@ export class MailService {
   ) {}
 
   async create(senderId: string, dto: MailCreateDto): Promise<MailModel> {
+    if (senderId === dto.receiver) {
+      throw new NotAcceptableException('Cannot send email to yourself');
+    }
     const sender = await this.userService.getById(senderId);
     const receiver = await this.userService.getById(dto.receiver);
 
@@ -33,6 +36,7 @@ export class MailService {
         'Cannot send mail to user in other city',
       );
     }
+
     const model = {
       title: dto.title,
       body: dto.body,
