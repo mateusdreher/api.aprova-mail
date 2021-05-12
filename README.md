@@ -48,7 +48,8 @@ $ npm run start:prod
 
 ## Docs
 
-After execute the api access the [docs](http://localhost:3000/docs)
+After execute the api access the [docs](http://localhost:3000/docs).
+**All the endpoints and respective payloads are described in the docs**
 
 ## Using Api
 
@@ -66,28 +67,31 @@ Or you can create your own user by the endpoint:
 [create\_user](http://localhost:3000/docs/#/user/UserController_create)
 
 After you choose an user (default or created) you must be authenticated (to grant you really are a user of APROVA-MAIL), you can do this using this [endpoint](http://localhost:3000/docs/#/auth/AuthController_auth).
-The endpoint will return a token that must be sent on `Authorization Header` (Bearer token) in all other requests. If not, an error will occur.
+The endpoint will return a accessToken that must be sent on `Authorization Header` (Bearer token) in all other requests. If not, an error will occur.
+
 ### Example
+
 Supose the following token has been returned
 `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDliMzU5ODNkMDdiODg1NmE2M2Q5YTUiLCJpYXQiOjE2MjA3OTEzNDMsImV4cCI6MTYyMDc5NDk0M30.wM3hzzvNoYco53bdT2v56C9VNyiN6TGJQBwivge8F-0`
 The authorization header to be:
+
 ``` javascript
-  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDliMzU5ODNkMDdiODg1NmE2M2Q5YTUiLCJpYXQiOjE2MjA3OTEzNDMsImV4cCI6MTYyMDc5NDk0M30.wM3hzzvNoYco53bdT2v56C9VNyiN6TGJQBwivge8F-0'
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDliMzU5ODNkMDdiODg1NmE2M2Q5YTUiLCJpYXQiOjE2MjA3OTEzNDMsImV4cCI6MTYyMDc5NDk0M30.wM3hzzvNoYco53bdT2v56C9VNyiN6TGJQBwivge8F-0'
 ```
 
 Above a list of endpoints and if is needed the token:
 
 ### User:
 
-* [Create user](http://localhost:3000/docs/#/user/UserController_create) : Not need the token
-* [List users in your city](http://localhost:3000/docs/#/user/UserController_listByCity): Need the token
+* [Create user](http://localhost:3000/docs/#/user/UserController_create) : **Not need the token**
+* [List users in your city](http://localhost:3000/docs/#/user/UserController_listByCity): **Need the token**
 
 ### Mail
 
-* [Create new email](http://localhost:3000/docs/#/mail/MailController_create): Need the token
-* [List mails received by you](http://localhost:3000/docs/#/mail/MailController_listMyReceived): Need the token
-* [List mails sent by you](http://localhost:3000/docs/#/mail/MailController_listMySent): Need the token
-* [Filter all your mails by body](http://localhost:3000/docs/#/mail/MailController_filterBody): Need the token
+* [Create new email](http://localhost:3000/docs/#/mail/MailController_create): **Need the token**
+* [List mails received by you](http://localhost:3000/docs/#/mail/MailController_listMyReceived): **Need the token**
+* [List mails sent by you](http://localhost:3000/docs/#/mail/MailController_listMySent): **Need the token**
+* [Filter all your mails by body](http://localhost:3000/docs/#/mail/MailController_filterBody): **Need the token**
 
 ``` javascript
 //Types of mail body filters:
@@ -100,8 +104,8 @@ Above a list of endpoints and if is needed the token:
 
 ### Auth
 
-* [Login on api](http://localhost:3000/docs/#/auth/AuthController_auth): Not need the token
-* [Reset Password](http://localhost:3000/docs/#/auth/AuthController_forgetPassword): Not need the token
+* [Login on api](http://localhost:3000/docs/#/auth/AuthController_auth): **Not need the token**
+* [Reset Password](http://localhost:3000/docs/#/auth/AuthController_forgetPassword): **Not need the token**
 
 ## Contact
 
