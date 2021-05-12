@@ -75,7 +75,7 @@ Above a list of endpoints and if is needed the token:
   * [List mails sent by you](http://localhost:3000/docs/#/mail/MailController_listMySent): Need the token
   * [Filter all your mails by body](http://localhost:3000/docs/#/mail/MailController_filterBody): Need the token
     ``` javascript
-    Types of mail body filters:
+    #Types of mail body filters:
     
     {
       1: 'Contains'
