@@ -34,7 +34,6 @@ export class AuthController {
   }
 
   @Post('forget-password')
-  @UseGuards(JwtAuthenticationGuard)
   async forgetPassword(@Body() dto: AuthDto) {
     try {
       await this.authService.resetPassword(dto);
