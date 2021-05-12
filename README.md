@@ -66,7 +66,14 @@ Or you can create your own user by the endpoint:
 [create\_user](http://localhost:3000/docs/#/user/UserController_create)
 
 After you choose an user (default or created) you must be authenticated (to grant you really are a user of APROVA-MAIL), you can do this using this [endpoint](http://localhost:3000/docs/#/auth/AuthController_auth).
-The endpoint will return a token that must be sent on `Authorization Header` (Bearer token) in all other requests. If not, an error will occur
+The endpoint will return a token that must be sent on `Authorization Header` (Bearer token) in all other requests. If not, an error will occur.
+### Example
+Supose the following token has been returned
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDliMzU5ODNkMDdiODg1NmE2M2Q5YTUiLCJpYXQiOjE2MjA3OTEzNDMsImV4cCI6MTYyMDc5NDk0M30.wM3hzzvNoYco53bdT2v56C9VNyiN6TGJQBwivge8F-0`
+The authorization header to be:
+``` javascript
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDliMzU5ODNkMDdiODg1NmE2M2Q5YTUiLCJpYXQiOjE2MjA3OTEzNDMsImV4cCI6MTYyMDc5NDk0M30.wM3hzzvNoYco53bdT2v56C9VNyiN6TGJQBwivge8F-0'
+```
 
 Above a list of endpoints and if is needed the token:
 
