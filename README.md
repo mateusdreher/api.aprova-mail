@@ -91,6 +91,7 @@ Above a list of endpoints and if is needed the token:
 ### Mail
 
 * [Create new email](http://localhost:3000/docs/#/mail/MailController_create): **Need the token**
+
 *OBS: You need at least two different users in the same city to send an email (sender and receiver)*
 * [List mails received by you](http://localhost:3000/docs/#/mail/MailController_listMyReceived): **Need the token**
 ``` javascript
