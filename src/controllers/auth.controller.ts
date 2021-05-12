@@ -1,3 +1,4 @@
+import { ResponseErrorDto } from './../common/dtos/response-error.dto';
 import { AuthDto } from './../dtos/auth.dto';
 import { JwtAuthenticationGuard } from '../common/guards/jwt-authemtication.guard';
 import { AuthService } from '../services/auth.service';
@@ -22,10 +23,11 @@ export class AuthController {
       return await this.authService.auth(dto);
     } catch (error) {
       throw new HttpException(
-        {
-          message: 'Error on auth',
-          error,
-        },
+        new ResponseErrorDto('auth.auth()', {
+          status: error.status,
+          error: error.response.error,
+          message: error.message,
+        }),
         HttpStatus.BAD_REQUEST,
       );
     }
@@ -43,10 +45,11 @@ export class AuthController {
       };
     } catch (error) {
       throw new HttpException(
-        {
-          message: 'Error on reset password',
-          error,
-        },
+        new ResponseErrorDto('auth.forget-password()', {
+          status: error.status,
+          error: error.response.error,
+          message: error.message,
+        }),
         HttpStatus.BAD_REQUEST,
       );
     }
