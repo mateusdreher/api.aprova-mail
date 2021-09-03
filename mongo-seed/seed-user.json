@@ -1,9 +1,8 @@
 [
   {
-    "id": "",
-    "name": "aprova-user",
-    "nickname": "",
-    "city": "",
-    "password": "admin"
+    "name": "Aprova-Mail",
+    "nickname": "aprova-user",
+    "city": "cascavel",
+    "password": "b8bfbcead5fda233add08859698d820b"
   }
 ]
